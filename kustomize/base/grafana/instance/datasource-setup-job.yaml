@@ -4,7 +4,7 @@ metadata:
   name: datasource-setup-cronjob
 spec:
   schedule: "*/2 * * * *"
-  concurrencyPolicy: forbid
+  concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 1
   successfulJobsHistoryLimit: 1
   jobTemplate:
@@ -37,7 +37,7 @@ spec:
               configMap:
                 defaultMode: 0777
                 name: datasource-setup-script
-            - name: vault-token
+            - name: thanos-token
               projected:
                 sources:
                   - serviceAccountToken:
