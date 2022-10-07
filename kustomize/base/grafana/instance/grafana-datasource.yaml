@@ -21,7 +21,7 @@ spec:
       type: prometheus
       version: 1
       # Cluster scoped
-      url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9091'
+      url: "https://thanos-querier.openshift-monitoring.svc.cluster.local:9091"
       # Namespaced scoped - requires 'customQueryParameters: namespace=mynamespace' above
       # url: 'https://thanos-querier.openshift-monitoring.svc.cluster.local:9092'
   name: grafana-datasource.yaml

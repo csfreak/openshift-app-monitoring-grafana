@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: monitoring-example
+  namespace: openshift-gitops
+spec:
+  generators:
+    - git:
+        directories:
+          - path: kustomize/overlay/*
+        repoURL: "https://github.com/csfreak/openshift-app-monitoring-grafana.git"
+        revision: no-install
+  syncPolicy: {}
+  template:
+    metadata:
+      name: "monitoring-example-{{path.basename}}"
+    spec:
+      destination:
+        server: "https://kubernetes.default.svc"
+        namespace: "{{path.basename}}"
+      project: default
+      source:
+        path: "{{path}}"
+        repoURL: "https://github.com/csfreak/openshift-app-monitoring-grafana.git"
+        targetRevision: no-install
+      syncPolicy:
+        automated: {}

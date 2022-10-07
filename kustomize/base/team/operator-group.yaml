@@ -3,5 +3,4 @@ kind: OperatorGroup
 metadata:
   name: self
 spec:
-  targetNamespaces:
-  - team-b
+  targetNamespaces: []
