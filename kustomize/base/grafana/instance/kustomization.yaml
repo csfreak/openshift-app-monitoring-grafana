@@ -7,7 +7,7 @@ resources:
   # - grafana-readonly.yaml
   - grafana-admin.yaml
   - grafana-datasource.yaml
-  - datasorce-setup-job.yaml
+  - datasource-setup-job.yaml
 
 configMapGenerator:
   - name: datasource-setup-script

@@ -16,7 +16,7 @@ patches:
       name: team-x
     patch: |-
       - op: replace
-        path: /spec/metadata/name
+        path: /metadata/name
         value: team-b
   - target:
       kind: OperatorGroup
