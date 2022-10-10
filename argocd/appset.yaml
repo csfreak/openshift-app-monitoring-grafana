@@ -24,4 +24,6 @@ spec:
         repoURL: "https://github.com/csfreak/openshift-app-monitoring-grafana.git"
         targetRevision: no-install
       syncPolicy:
-        automated: {}
+        automated:
+          prune: true
+          selfHeal: true
