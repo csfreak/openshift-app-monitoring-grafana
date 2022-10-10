@@ -20,7 +20,7 @@ spec:
           restartPolicy: Never
           containers:
             - name: datasource-setup-script
-              image: ubi8-minimal:latest
+              image: ubi8:latest
               args:
                 - /script/script.sh
               resources:

@@ -1,5 +1,4 @@
 #!/bin/bash
-microdnf install -y curl
 
 TOKEN=$(cat /var/run/secrets/tokens/thanos-token)
 
