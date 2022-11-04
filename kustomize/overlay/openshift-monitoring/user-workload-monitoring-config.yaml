@@ -6,8 +6,8 @@ metadata:
 data:
   config.yaml: |
     alertmanager:
-      enabled: "true"
-      enableAlertmanagerConfig: "true"
+      enabled: true
+      enableAlertmanagerConfig: true
     prometheus: 
       retention: 1h 
       resources:
@@ -36,6 +36,3 @@ data:
       #     resources:
       #       requests:
       #         storage: 3Gi
-    alertmanager:
-      enabled: true 
-      enableAlertmanagerConfig: true
