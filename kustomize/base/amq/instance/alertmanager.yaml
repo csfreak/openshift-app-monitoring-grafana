@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: unrouted-message-alert
+spec:
+  groups:
+    - name: amq
+      rules:
+        - alert: UnroutedMessageAlert
+          expr: rate(artemis_unrouted_message_count[1m]) >  2 * rate(artemis_unrouted_message_count[5m])
+---
+apiVersion: monitoring.coreos.com/v1beta1
+kind: AlertmanagerConfig
+metadata:
+  name: amq-routing
+spec:
+  route:
+    receiver: team
+    groupBy: [job]
+  receivers:
+    - name: team
+      webhookConfigs:
+        - url: https://example.org/post

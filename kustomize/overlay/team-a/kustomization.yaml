@@ -46,3 +46,13 @@ patches:
       - op: add
         path: /spec/containers/0/args/-
         value: '-openshift-sar={"resource": "services", "verb": "get", "namespace":"team-a"}'
+  - target:
+      kind: AlertmanagerConfig
+      name: amq-routing
+    patch: |-
+      - op: replace
+        path: /spec/route/receiver
+        value: team-a
+      - op: replace
+        path: /spec/receivers/0/name
+        value: team-a
